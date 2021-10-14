@@ -51,7 +51,7 @@
 	    <td><%= data[i].Luokkatunnus%></td>
                     <td>
                         <a class="btn btn-success edit" href="../opiskelija/edit/<%=data[i].idOpiskelija%>">Edit</a>                       
-                        <a class="btn btn-danger delete" onclick="return alert('Oletko varma?')" href="../opiskelija/delete/<%=data[i].idOpiskelija%>">Delete</a>                       
+                        <a class="btn btn-danger delete" onclick="return alert('Oletko varma, että haluat poistaa opiskelijan?')" href="../opiskelija/delete/<%=data[i].idOpiskelija%>">Delete</a>                       
                     </td>
                 </tr>
             <% } %>

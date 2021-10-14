@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 var dbConn  = require('../lib/db');
  
-// display books page
+// näytä opiskelijasivu
 router.get('/', function(req, res, next) {
       
-    dbConn.query('select * from opiskelija order by idopiskelija desc',function(err,rows)     {
+    dbConn.query('select * from opiskelija order by idOpiskelija',function(err,rows)     {
  
         if(err) {
             req.flash('error', err);
@@ -39,7 +39,7 @@ router.post('/add', function(req, res, next) {
         errors = true;
 
         // set flash message
-        req.flash('error', "Anna kaikki tarvittavat tiedot");
+        req.flash('virhe', "Anna kaikki tarvittavat tiedot");
         // render to add.ejs with flash message
         res.render('opiskelija/add', {
             idOpiskelija: req.params.idOpiskelija,
@@ -74,8 +74,8 @@ router.post('/add', function(req, res, next) {
 	    Luokkatunnus: form_data.Luokkatunnus                    
                 })
             } else {                
-                req.flash('success', 'Opiskelijan tiedot lisätty kantaan.');
-                res.redirect('/books');
+                req.flash('Onnistui!', 'Opiskelijan tiedot lisätty kantaan.');
+                res.redirect('/opiskelija');
             }
         })
     }
@@ -157,8 +157,8 @@ if(Etunimi.length === 0 || Sukunimi.length === 0|| Osoite.length === 0|| Luokkat
             Luokkatunnus: Luokkatunnus
                 })
             } else {
-                req.flash('Onnistui!', 'Opiskerlijan tiedot lisatty kantaan');
-                res.redirect('/books');
+                req.flash('Onnistui!', 'Opiskelijan tiedot lisatty kantaan');
+                res.redirect('/opiskelija');
             }
         })
     }
@@ -174,12 +174,11 @@ router.get('/delete/(:idOpiskelija)', function(req, res, next) {
         if (err) {
             // set flash message
             req.flash('Virhe', err)
-            // redirect to books page
+            // suuntaa uudelleen opiskelijoihin
             res.redirect('/opiskelija')
         } else {
             // set flash message
-            req.flash('Onnistui', 'Opiskelijan tiedot poistettu ID = ' + idOpiskelija)
-            // redirect to books page
+            req.flash('Onnistui!', 'Opiskelijan tiedot poistettu ID = ' + idOpiskelija)
             res.redirect('/opiskelija')
         }
     })

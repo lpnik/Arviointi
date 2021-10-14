@@ -11,7 +11,7 @@ var connection  = require('./lib/db');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var OpiskelijaRouter = require('./routes/opiskelija');
+var opiskelijaRouter = require('./routes/opiskelija');
 
 var app = express();
 
