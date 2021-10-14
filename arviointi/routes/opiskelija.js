@@ -20,8 +20,8 @@ router.get('/add', function(req, res, next) {
     // render to add.ejs
     res.render('opiskelija/add', {
         Etunimi: '',
-        Sukunimi '':,
-        Osoite '':,
+        Sukunimi: '',
+        Osoite: '',
         Luokkatunnus: ''        
     })
 })
@@ -35,7 +35,7 @@ router.post('/add', function(req, res, next) {
     let Luokkatunnus = req.body.Luokkatunnus;
     let  errors = false;
 
-    if(Etunimi.length === 0 || Sukunimi.length === 0|| Osoite.length === 0| | Luokkatunnus.length === 0|{
+    if(Etunimi.length === 0 || Sukunimi.length === 0|| Osoite.length === 0|| Luokkatunnus.length === 0) {
         errors = true;
 
         // set flash message
@@ -119,7 +119,7 @@ router.post('/update/:idOpiskelija', function(req, res, next) {
     let Luokkatunnus = req.body.Luokkatunnus;
     let errors = false;
 
-if(Etunimi.length === 0 || Sukunimi.length === 0|| Osoite.length === 0| | Luokkatunnus.length === 0|{
+if(Etunimi.length === 0 || Sukunimi.length === 0|| Osoite.length === 0|| Luokkatunnus.length === 0) {
         errors = true;
         
         // set flash message
