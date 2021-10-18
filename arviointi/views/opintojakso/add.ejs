@@ -1,12 +1,46 @@
 <!doctype html>
 <html lang="en">
 <head>
+<style>
+label {
+    font-family: "Fantasy", Papyrus;
+    font-size: 25px;
+    font-weight: 900;
+    color: #FE0000;
+}
+div {
+font-family: "Ink Free";
+font-size: 20px;
+font-weight: 900;
+color: #03B48C;
+}
+</style>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Lisaa arviointi</title>
+                <link href= "/public/stylesheets/opintojakso/style.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body class="container" style="margin-top: 50px;">
+     <style>
+         th { 
+           color: #FE0000;
+           font-family: "Fantasy", Papyrus;
+           font-weight: 900;
+           font-size: 25px;
+         }
+        td {
+           color: #03B48C;
+           font-family: "Ink Free";
+           font-weight: 900;
+           font-size: 20px;
+        }
+       a {
+          text-color: red;
+          font-family: Segoe Print;
+          font-weight: bold;
+      }
+     </style>
 
 	<% if (messages.error) { %>
 	<div class="alert alert-danger" role="alert"><%- messages.error %></div>

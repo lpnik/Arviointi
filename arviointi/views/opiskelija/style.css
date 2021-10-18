@@ -1,0 +1,18 @@
+body {
+  padding: 50px;
+  font 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+}
+h1 {
+  color: DeepPink;
+  text-aling: center;
+}
+p {
+  font-family: calibri;
+  font-size: 22px;
+  color: Pink;
+}
+
+a {
+  colour: #00B7FF;
+}
